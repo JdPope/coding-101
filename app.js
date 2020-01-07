@@ -3,15 +3,15 @@ const cForm = document.getElementById('comment-form')
 const formBox = document.getElementById('comment-input')
 const commentsList = document.getElementById('comments-list')
 
-cForm.addEventListener('submit', () => {
+cForm.addEventListener('submit', event => {
   event.preventDefault()
-  submitComment()})
-function submitComment(){
-  let comment = formBox.value
-  let commentLi = document.createElement('li')
-  commentLi.innerText = comment
-  commentsList.appendChild(commentLi)
+  submitComment()
+})
 
+function submitComment(){
+  const commentLi = document.createElement('li')
+  commentLi.innerText = formBox.value
+  commentsList.appendChild(commentLi)
 }
 //2. Use FormData() to add comment to comment list
 
